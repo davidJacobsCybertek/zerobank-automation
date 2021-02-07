@@ -1,4 +1,5 @@
 Feature: Purchase Foreign Currency
+
   Scenario: Available currencies
     Given the user accesses the Purchase foreign currency cash tab
     Then following currencies should be available
@@ -9,15 +10,20 @@ Feature: Purchase Foreign Currency
       |Denmark (krone) |
       |Eurozone (euro) |
       |Great Britain (pound)|
+      #|Hong Kong (dollar)   |
       |Japan (yen) |
       |Mexico (peso) |
       |Norway (krone) |
       |New Zealand (dollar) |
+      #|Sweden (krona)       |
       |Singapore (dollar) |
+      #|Thailand (baht)     |
+
   Scenario: Error message for not selecting currency
     Given the user accesses the Purchase foreign currency cash tab
     When user tries to calculate cost without selecting a currency
     Then error message should be displayed
+  @wip
   Scenario: Error message for not entering value
     Given the user accesses the Purchase foreign currency cash tab
     When user tries to calculate cost without entering a value
