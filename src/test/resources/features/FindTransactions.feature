@@ -1,4 +1,4 @@
-@wip
+
 Feature: Find Transactions in Account Activity
   Background:
     Given the user is logged in

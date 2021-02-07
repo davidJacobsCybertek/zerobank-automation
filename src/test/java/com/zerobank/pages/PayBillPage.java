@@ -30,6 +30,27 @@ public class PayBillPage {
     @FindBy(css = "div#alert_content>span")
     public WebElement submitApprovalMessage;
 
+    @FindBy(css = "a[href='#ui-tabs-2']")
+    public WebElement addNewPayee;
+
+    @FindBy(css = "#np_new_payee_name")
+    public WebElement nameOfPayee;
+
+    @FindBy(css = "#np_new_payee_details")
+    public WebElement detailsOfPayee;
+
+    @FindBy(css = "#np_new_payee_address")
+    public WebElement addressOfPayee;
+
+    @FindBy(css = "#np_new_payee_account")
+    public WebElement accountOfPayee;
+
+    @FindBy(css = "#add_new_payee")
+    public WebElement addNewPayeeButton;
+
+    @FindBy(css = "div#alert_content")
+    public WebElement messageOfPayeeCreated;
+
 
 
 
