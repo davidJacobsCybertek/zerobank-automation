@@ -19,5 +19,20 @@ public class AccountSummaryPage {
     @FindBy(xpath = "(//div[@class='board'])[3]//th")
     public List<WebElement> CreditCardAccountHeaders;
 
+    @FindBy(css = "a[href='/bank/account-activity.html?accountId=1']")
+    public WebElement savingsFirstLink;
+
+    @FindBy(css = "a[href='/bank/account-activity.html?accountId=6']")
+    public WebElement brokerageLink;
+
+    @FindBy(css = "a[href='/bank/account-activity.html?accountId=2']")
+    public WebElement checkingLink;
+
+    @FindBy(css = "a[href='/bank/account-activity.html?accountId=5']")
+    public WebElement creditCardLink;
+
+    @FindBy(css = "a[href='/bank/account-activity.html?accountId=4']")
+    public WebElement loanLink;
+
 
 }
