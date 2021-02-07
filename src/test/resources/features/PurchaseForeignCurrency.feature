@@ -1,3 +1,5 @@
+
+@reg
 Feature: Purchase Foreign Currency
 
   Scenario: Available currencies
