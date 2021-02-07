@@ -1,4 +1,4 @@
-@wip
+@wip @reg
 Feature: Paying a Bill
   Background:
     Given the user is on the login page

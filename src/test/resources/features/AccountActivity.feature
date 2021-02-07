@@ -1,4 +1,4 @@
-
+@reg
 Feature: Account Activity
   Background:
     Given the user is on the login page
