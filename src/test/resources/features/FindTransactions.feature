@@ -1,5 +1,9 @@
 Feature: Find Transactions in Account Activity
-
+  Background:
+    Given the user is logged in
+    And the user navigates to Online Banking page
+    And the user navigates to Account Activity page
+@wip
   Scenario: Search date range
     Given the user accesses the Find Transactions tab
     When the user enters date range from "2012-09-01" to "2012-09-06"
