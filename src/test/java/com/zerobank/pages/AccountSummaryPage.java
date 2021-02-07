@@ -19,5 +19,8 @@ public class AccountSummaryPage {
     @FindBy(xpath = "(//div[@class='board'])[3]//th")
     public List<WebElement> CreditCardAccountHeaders;
 
+    @FindBy(css = "a[href='/bank/account-activity.html?accountId=1']")
+    public WebElement savingsFirstLink;
+
 
 }
