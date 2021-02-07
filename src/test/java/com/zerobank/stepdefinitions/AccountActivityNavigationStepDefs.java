@@ -26,22 +26,40 @@ public class AccountActivityNavigationStepDefs {
         new LoginPage().BackToSafetyButton.click();
     }
 
-    @When("the user clicks on Savings link on the Account Summary page")
-    public void the_user_clicks_on_Savings_link_on_the_Account_Summary_page() {
+    @When("the user clicks on {string} link on the Account Summary page")
+    public void the_user_clicks_on_link_on_the_Account_Summary_page(String accountLink) {
         new IndexPage().moreServicesButton.click();
         new OnlineBankingPage().AccountSummaryLink.click();
-        new AccountSummaryPage().savingsFirstLink.click();
+
+        switch (accountLink.toLowerCase()) {
+            case "savings":
+                new AccountSummaryPage().savingsFirstLink.click();
+                break;
+            case "brokerage":
+                new AccountSummaryPage().brokerageLink.click();
+                break;
+            case "checking":
+                new AccountSummaryPage().checkingLink.click();
+                break;
+            case "credit card":
+                new AccountSummaryPage().creditCardLink.click();
+                break;
+            case "loan":
+                new AccountSummaryPage().loanLink.click();
+                break;
+        }
+
     }
     @Then("the Account Activity page should be displayed")
     public void the_Account_Activity_page_should_be_displayed() {
         Assert.assertEquals("verify title","Zero - Account Activity",Driver.get().getTitle());
     }
 
-    @Then("Account drop down should have Savings selected")
-    public void account_drop_down_should_have_Savings_selected() {
+    @Then("Account drop down should have {string} selected")
+    public void account_drop_down_should_have_selected(String account) {
           Select accountOptions=new Select(new AccountActivityPage().accounts);
           List<WebElement> options=accountOptions.getOptions();
           //System.out.println("accountOptions.getFirstSelectedOption() = " + accountOptions.getFirstSelectedOption().getText());
-Assert.assertEquals("verify selected account","Savings",accountOptions.getFirstSelectedOption().getText());
+Assert.assertEquals("verify selected account",account,accountOptions.getFirstSelectedOption().getText());
     }
 }

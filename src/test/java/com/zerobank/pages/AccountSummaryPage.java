@@ -22,5 +22,17 @@ public class AccountSummaryPage {
     @FindBy(css = "a[href='/bank/account-activity.html?accountId=1']")
     public WebElement savingsFirstLink;
 
+    @FindBy(css = "a[href='/bank/account-activity.html?accountId=6']")
+    public WebElement brokerageLink;
+
+    @FindBy(css = "a[href='/bank/account-activity.html?accountId=2']")
+    public WebElement checkingLink;
+
+    @FindBy(css = "a[href='/bank/account-activity.html?accountId=5']")
+    public WebElement creditCardLink;
+
+    @FindBy(css = "a[href='/bank/account-activity.html?accountId=4']")
+    public WebElement loanLink;
+
 
 }
