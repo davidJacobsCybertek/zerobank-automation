@@ -28,6 +28,12 @@ public class AccountActivityPage {
     @FindBy(css = "#aa_toDate")
     public WebElement toDate;
 
+    @FindBy(css = "#aa_description")
+    public WebElement description;
+
+    @FindBy(css = "#aa_type")
+    public WebElement typeOptions;
+
     @FindBy(css = "a[href='#ui-tabs-2']")
     public WebElement findTrasactionsLink;
 
@@ -61,4 +67,42 @@ public class AccountActivityPage {
         //System.out.println(transactionDates.toString());
         return transactionDates;
     }
+    public List<String> findTransactionDescriptions(){
+
+        int numberOfTransactions = tableRows.size();
+        //System.out.println("numberOfTransactions = " + numberOfTransactions);
+        List<String> allCells = BrowserUtils.getElementsText(tableCells);
+        //System.out.println(allCells.toString());
+        List<String> transactionDescriptions = new ArrayList<>();
+        for (int i = 0; i < numberOfTransactions; i++) {
+            transactionDescriptions.add(allCells.get(((4 * i)+1)));
+        }
+        System.out.println(transactionDescriptions.toString());
+        return transactionDescriptions;
+    }
+
+    public List<String> findAmounts(String account){
+        BrowserUtils.waitFor(1);
+        int numberOfTransactions = tableRows.size();
+        //System.out.println("numberOfTransactions = " + numberOfTransactions);
+        List<String> allCells = BrowserUtils.getElementsText(tableCells);
+        //System.out.println(allCells.toString());
+        List<String> amounts = new ArrayList<>();
+        String cellAmount="";
+        for (int i = 0; i < numberOfTransactions; i++) {
+            if(account.equals("Deposit")){
+            cellAmount=allCells.get((4 * i)+2);
+                if (!cellAmount.isEmpty())
+                amounts.add(cellAmount);
+        }else if (account.equals("Withdrawal")){
+                cellAmount=allCells.get((4 * i)+3);
+                if (!cellAmount.isEmpty())
+                amounts.add(cellAmount);;
+            }
+        }
+        System.out.println(account+" cells "+amounts.toString());
+        System.out.println(account+" cells size = "+amounts.size());
+        return amounts;
+    }
+
 }
