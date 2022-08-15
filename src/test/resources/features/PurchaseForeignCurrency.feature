@@ -1,7 +1,7 @@
 
 @reg
 Feature: Purchase Foreign Currency
-
+@smoke
   Scenario: Available currencies
     Given the user accesses the Purchase foreign currency cash tab
     Then following currencies should be available

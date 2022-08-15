@@ -1,6 +1,6 @@
 @reg
 Feature: Add new payee under pay bills
-
+  @david
   Scenario: Add a new payee
     Given Add New Payee tab
     And creates new payee using following information

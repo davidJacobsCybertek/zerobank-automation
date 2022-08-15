@@ -2,7 +2,7 @@
 Feature: Login
 Background:
   Given the user is on the login page
-
+@smoke
   Scenario: Authorised used can log in
     When the user enters valid keys
     Then the user should be able to login

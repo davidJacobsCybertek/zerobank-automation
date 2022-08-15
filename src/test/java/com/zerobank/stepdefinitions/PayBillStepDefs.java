@@ -57,7 +57,7 @@ public class PayBillStepDefs {
 
     @Then("the user cannot see the message {string}")
     public void the_user_cannot_see_the_message(String expectedMessage) {
-        Assert.assertNotEquals("verify submit message", expectedMessage, new PayBillPage().submitApprovalMessage.getText());
+        Assert.assertEquals("verify submit message", expectedMessage, new PayBillPage().submitApprovalMessage.getText());
     }
 
     @Then("the user see the {string} error message  {string}")
@@ -65,12 +65,15 @@ public class PayBillStepDefs {
 //        JavascriptExecutor jse = (JavascriptExecutor) Driver.get();
 //        jse.executeScript()
         String actualErrormessage = null;
+
         switch (dateOrAmount.toLowerCase()) {
             case "date":
                 actualErrormessage = new PayBillPage().date.getAttribute("validationMessage");
+                System.out.println("actual message "+actualErrormessage);
                 break;
             case "amount":
                 actualErrormessage = new PayBillPage().amount.getAttribute("validationMessage");
+                System.out.println("actual message "+actualErrormessage);
                 break;
         }
 

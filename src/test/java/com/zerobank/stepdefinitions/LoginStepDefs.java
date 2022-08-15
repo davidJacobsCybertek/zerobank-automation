@@ -12,6 +12,7 @@ import org.junit.Assert;
 public class LoginStepDefs {
 
 
+
     @Given("the user is on the login page")
     public void the_user_is_on_the_login_page() {
         Driver.get().get(ConfigurationReader.get("url"));
@@ -30,7 +31,9 @@ public class LoginStepDefs {
         new LoginPage().username.sendKeys(ConfigurationReader.get("username"));
         new LoginPage().password.sendKeys(ConfigurationReader.get("password"));
         new LoginPage().signIn.click();
-        new LoginPage().BackToSafetyButton.click();
+        Driver.get().navigate().back();
+
+        //new LoginPage().BackToSafetyButton.click();
     }
 
     @Then("the user should be able to login")

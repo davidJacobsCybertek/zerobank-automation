@@ -8,7 +8,7 @@ Feature: Paying a Bill
 
   Scenario: the user checks the page title
     Then the page title is "Zero - Pay Bills"
-
+  @smoke
   Scenario: User can pay a bill with valid amount and date
     When the user selects payee
     And the user selects Account
@@ -27,7 +27,7 @@ Feature: Paying a Bill
       And the user clicks pay
       Then the user cannot see the message "The payment was successfully submitted."
 
-
+@eric
   Scenario: user can not  pay bill without selecting date
     When the user selects payee
     And the user selects Account
@@ -37,7 +37,7 @@ Feature: Paying a Bill
     And the user clicks pay
     Then the user see the "date" error message  "Please fill out this field."
 
-
+  @eric
   Scenario: user can not  pay bill without entering amount
     When the user selects payee
     And the user selects Account

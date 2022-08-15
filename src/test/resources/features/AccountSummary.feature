@@ -8,7 +8,7 @@ Background:
 
   Scenario: User can see the page title
     Then the page title is "Zero - Account Summary"
-
+  @david
   Scenario: User can see various Account Names
     Then the page should have following account types
     |Cash Accounts|
